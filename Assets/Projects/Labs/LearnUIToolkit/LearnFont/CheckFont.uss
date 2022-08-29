@@ -1,0 +1,5 @@
+Label {
+    -unity-font: none;
+    -unity-font-definition: url('project://database/Assets/Projects/Labs/LearnUIToolkit/LearnFont/SourceHanSansCN-Regular%20SDF.asset?fileID=11400000&guid=eed44d2f3e0b2724fa8c22b04b7c40b5&type=2#SourceHanSansCN-Regular SDF');
+    white-space: normal;
+}
