@@ -1,5 +1,5 @@
 Label {
     -unity-font: none;
-    -unity-font-definition: url('project://database/Assets/Projects/Labs/LearnUIToolkit/LearnFont/SourceHanSansCN-Regular%20SDF.asset?fileID=11400000&guid=eed44d2f3e0b2724fa8c22b04b7c40b5&type=2#SourceHanSansCN-Regular SDF');
+    -unity-font-definition: url('project://database/Assets/Projects/Labs/LearnUIToolkit/LearnFont/SourceHanSerif-Regular%20SDF.asset?fileID=11400000&guid=e1701cb951c624146badffbef31b4349&type=2#SourceHanSerif-Regular SDF');
     white-space: normal;
 }

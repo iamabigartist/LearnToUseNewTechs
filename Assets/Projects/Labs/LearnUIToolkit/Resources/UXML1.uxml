@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" style="font-size: 53px; left: initial; height: 170px;" />
+    <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" style="font-size: 53px; height: 150px; transform-origin: center;" />
+    <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" style="font-size: 53px; height: 111px;" />
+    <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" style="font-size: 53px; height: 107px;" />
+</ui:UXML>

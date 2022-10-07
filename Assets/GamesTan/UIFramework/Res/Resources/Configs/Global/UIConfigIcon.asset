@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa0a06fa5ed4ff7967693bdf5ce2d96, type: 3}
+  m_Name: UIConfigIcon
+  m_EditorClassIdentifier: 
+  SearchDirs:
+  - UI/Equip
+  - UI/Items
+  - UI/Player
+  - UI/Button
+  - UI/RoleIcon
+  Infos:
+  - Name: 31201
+    Icon: {fileID: 21300000, guid: 6f0747ae58b529e4ba309589d428d942, type: 3}
+  - Name: 31300
+    Icon: {fileID: 21300000, guid: 2f99e207242e7df4d958cd8894f15387, type: 3}
+  - Name: 31401
+    Icon: {fileID: 21300000, guid: c20b42374a78e684c954e33e207de385, type: 3}
+  - Name: 31500
+    Icon: {fileID: 21300000, guid: f702085265524034bb280a84e9790df2, type: 3}
+  - Name: 31600
+    Icon: {fileID: 21300000, guid: ce94588f3e8a17d4fbcd6fc79859aecd, type: 3}
+  - Name: 9001
+    Icon: {fileID: 21300000, guid: 844b0feef36087243abe76517004a237, type: 3}
+  - Name: 9002
+    Icon: {fileID: 21300000, guid: 91bacfeec354a50408f0437129f02ef5, type: 3}
+  - Name: 9003
+    Icon: {fileID: 21300000, guid: dec8278ffaa97954a923c4cdb4e00fed, type: 3}
+  - Name: 9004
+    Icon: {fileID: 21300000, guid: e285c33681df5c84baa30b10a13d6be0, type: 3}
+  - Name: 9005
+    Icon: {fileID: 21300000, guid: 8b4a8094e008d3e4fb8613015db57d83, type: 3}
+  ClassInfos:
+  - Frame: {fileID: 21300000, guid: be53c2d198c7d4210888d879a530f0f7, type: 3}
+    Bg: {r: 0.17254902, g: 0.24705884, b: 0.18039216, a: 1}
+    Color: {r: 0.5372549, g: 0.882353, b: 0.20392159, a: 1}
+  - Frame: {fileID: 21300000, guid: 70db338447d354c36a0975fb616b135e, type: 3}
+    Bg: {r: 0.09019608, g: 0.15294118, b: 0.34901962, a: 1}
+    Color: {r: 0.45098042, g: 0.89019614, b: 0.8941177, a: 1}
+  - Frame: {fileID: 21300000, guid: 70db338447d354c36a0975fb616b135e, type: 3}
+    Bg: {r: 0.045701336, g: 0.21529706, b: 0.745283, a: 1}
+    Color: {r: 0.45098042, g: 0.89019614, b: 0.8941177, a: 1}
+  - Frame: {fileID: 21300000, guid: 1757479cd707b4180a861faf78aeccb2, type: 3}
+    Bg: {r: 0.29803923, g: 0.20392159, b: 0.4431373, a: 1}
+    Color: {r: 0.96470594, g: 0.454902, b: 1, a: 1}
+  - Frame: {fileID: 21300000, guid: 1757479cd707b4180a861faf78aeccb2, type: 3}
+    Bg: {r: 0.35081035, g: 0.13777146, b: 0.6792453, a: 1}
+    Color: {r: 0.96470594, g: 0.454902, b: 1, a: 1}
+  - Frame: {fileID: 21300000, guid: 38b5dbcdbb36e4957abdff78cfe48537, type: 3}
+    Bg: {r: 0.5372549, g: 0.37254903, b: 0.23529413, a: 1}
+    Color: {r: 0.98823535, g: 0.6313726, b: 0, a: 1}
+  - Frame: {fileID: 21300000, guid: 38b5dbcdbb36e4957abdff78cfe48537, type: 3}
+    Bg: {r: 0.764151, g: 0.43974724, b: 0.16941082, a: 1}
+    Color: {r: 0.98823535, g: 0.6313726, b: 0, a: 1}
+  - Frame: {fileID: 21300000, guid: 74670eb495c42448db0be880cfa86790, type: 3}
+    Bg: {r: 0.62352943, g: 0.29803923, b: 0.30980393, a: 1}
+    Color: {r: 1, g: 0, b: 0.3529412, a: 1}
+  - Frame: {fileID: 21300000, guid: 74670eb495c42448db0be880cfa86790, type: 3}
+    Bg: {r: 0.6509434, g: 0.14431292, b: 0.16262494, a: 1}
+    Color: {r: 1, g: 0, b: 0.3529412, a: 1}
+  - Frame: {fileID: 21300000, guid: 356c0b18fbd3e4e94a7e05ae60d72575, type: 3}
+    Bg: {r: 1, g: 1, b: 1, a: 1}
+    Color: {r: 1, g: 1, b: 1, a: 1}
