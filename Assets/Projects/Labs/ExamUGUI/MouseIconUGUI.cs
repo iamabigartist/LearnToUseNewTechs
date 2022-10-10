@@ -1,10 +1,12 @@
-﻿using System;
-using UnityEngine;
-[RequireComponent(typeof(RectTransform))]
-public class MouseIconUGUI:MonoBehaviour
+﻿using UnityEngine;
+namespace Labs.ExamUGUI
 {
-	void Update()
+	[RequireComponent(typeof(RectTransform))]
+	public class MouseIconUGUI:MonoBehaviour
 	{
-		transform.position = Input.mousePosition;
+		void Update()
+		{
+			transform.position = Input.mousePosition;
+		}
 	}
 }

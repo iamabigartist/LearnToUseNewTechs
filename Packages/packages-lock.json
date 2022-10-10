@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.mathematics": "1.2.5"
       },
-      "hash": "ae47b48c5a56eaf91038d45afa83a290d723aeba"
+      "hash": "3585efa7dd5f36b105a281a50eb6bea0740170e9"
     },
     "com.cysharp.messagepipe": {
       "version": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe",

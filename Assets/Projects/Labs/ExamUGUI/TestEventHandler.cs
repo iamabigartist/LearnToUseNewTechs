@@ -1,15 +1,16 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
-public class TestEventHandler :Selectable, IPointerUpHandler,IPointerDownHandler
+namespace Labs.ExamUGUI
 {
-	public void OnPointerUp(PointerEventData eventData)
+	public class TestEventHandler :MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 	{
-		Debug.Log($"Up {gameObject.name}");
-	}
-	public void OnPointerDown(PointerEventData eventData)
-	{
-		Debug.Log($"Down {gameObject.name}");
+		public void OnPointerUp(PointerEventData eventData)
+		{
+			Debug.Log($"Up {gameObject.name}");
+		}
+		public void OnPointerDown(PointerEventData eventData)
+		{
+			Debug.Log($"Down {gameObject.name}");
+		}
 	}
 }
