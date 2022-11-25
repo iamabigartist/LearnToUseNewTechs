@@ -1,13 +1,20 @@
 {
   "dependencies": {
     "com.chua.prototype-utils": {
-      "version": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypeUtils#dev",
+      "version": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypePackages/PrototypeUtils#dev",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.mathematics": "1.2.5"
       },
-      "hash": "3585efa7dd5f36b105a281a50eb6bea0740170e9"
+      "hash": "de7c6b8e857db6c31099e020974096f32839235b"
+    },
+    "com.chua.time-utils": {
+      "version": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypePackages/TimeUtils#dev",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "de7c6b8e857db6c31099e020974096f32839235b"
     },
     "com.cysharp.messagepipe": {
       "version": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe",
@@ -140,16 +147,6 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
-    },
-    "com.unity.visualscripting": {
-      "version": "1.7.8",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
     },
     "com.xiaojiang.unlimitedscroller": {
       "version": "https://github.com/Brian-Jiang/UnlimitedScrollUI.git",

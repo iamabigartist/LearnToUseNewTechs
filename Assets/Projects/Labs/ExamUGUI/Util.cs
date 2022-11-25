@@ -1,17 +1,52 @@
-﻿using UnityEngine.Events;
+﻿using System;
+using System.IO;
+using System.Text.RegularExpressions;
+using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
-public static class Util
+using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
+namespace Labs.ExamUGUI
 {
-	public static EventTrigger.Entry CreateEventTriggerEntry(EventTriggerType TriggerType, params UnityAction<BaseEventData>[] callbacks)
+	public static class Util
 	{
-		var entry = new EventTrigger.Entry
+		// static string ToLiteral(string valueTextForCompiler)
+		// {
+		// 	return SymbolDisplay.FormatLiteral(valueTextForCompiler, false);
+		// }
+		static bool EnsureDirectory(string Path)
 		{
-			eventID = TriggerType
-		};
-		foreach (var action in callbacks)
-		{
-			entry.callback.AddListener(action);
+			var exist = Directory.Exists(Path);
+			if (!exist)
+			{
+				Debug.Log($"Create Directory {Path}");
+				Directory.CreateDirectory(Path);
+			}
+			return exist;
 		}
-		return entry;
+		static string EnsureLineEnding(string input)
+		{
+			return Regex.Replace(input, "\r\n|\r|\n", Environment.NewLine);
+		}
+
+		public static EventTrigger.Entry CreateEventTriggerEntry(EventTriggerType TriggerType, params UnityAction<BaseEventData>[] callbacks)
+		{
+			var entry = new EventTrigger.Entry
+			{
+				eventID = TriggerType
+			};
+			foreach (var action in callbacks)
+			{
+				entry.callback.AddListener(action);
+			}
+			return entry;
+		}
+
+		public static bool IsNull(this Object obj) => obj == null;
+
+		public static void Add(this VisualElement ve, params VisualElement[] children)
+		{
+			foreach (var child in children) { ve.Add(child); }
+		}
 	}
 }

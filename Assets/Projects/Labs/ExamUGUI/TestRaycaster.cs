@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PrototypeUtils;
+using PrototypePackages.PrototypeUtils;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -18,7 +18,7 @@ namespace Labs.ExamUGUI
 				m_EventSystem = EventSystem.current;
 				var results = new List<RaycastResult>();
 				m_GraphicRaycaster.Raycast(new(m_EventSystem) { position = Input.mousePosition }, results);
-				var result_string = results.Select(r => r.gameObject.name).ToMString(",");
+				var result_string = results.Select(r => r.gameObject.name).JoinString(",");
 				Debug.Log(result_string);
 			}
 

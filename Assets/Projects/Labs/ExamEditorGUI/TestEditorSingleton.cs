@@ -1,38 +1,17 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using Labs.ExamUGUI;
+using PrototypePackages.PrototypeUtils;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static PrototypePackages.TimeUtils.CounterUtil<float>;
 using Object = UnityEngine.Object;
 namespace Labs.ExamEditorGUI
 {
 	public class MySingletonWindow : EditorWindow
 	{
-		// static string ToLiteral(string valueTextForCompiler)
-		// {
-		// 	return SymbolDisplay.FormatLiteral(valueTextForCompiler, false);
-		// }
-		static bool EnsureDirectory(string Path)
-		{
-			var exist = Directory.Exists(Path);
-			if (!exist)
-			{
-				Debug.Log($"Create Directory {Path}");
-				Directory.CreateDirectory(Path);
-			}
-			return exist;
-		}
-		static string EnsureLineEnding(string input)
-		{
-			return Regex.Replace(input, "\r\n|\r|\n", Environment.NewLine);
-		}
-
-		public EditorWindow MouseOverWindow;
-		public EditorWindow FocusWindow;
-		public Object SelectedObject;
 		[MenuItem("SingletonTest/Monitor")]
 		static void Init()
 		{
@@ -40,25 +19,55 @@ namespace Labs.ExamEditorGUI
 			CreateWindow<MySingletonWindow>("Monitor");
 			GetWindow(Type.GetType("UnityEditor.ConsoleWindow,UnityEditor.dll")).ShowNotification(new("asdasdasd"));
 		}
+
+		public EditorWindow MouseOverWindow;
+		public EditorWindow FocusWindow;
+		public Object SelectedObject;
+		public Object SelectedContextObject;
+
+		bool Showing => MySingleton.instance.CurrentWindow == this;
+
+		CountFor CountFor;
+		Counter ui_update;
+
 		void OnEnable()
 		{
+			// Debug.Log("OnEnable");
 			MySingleton.instance.CurrentWindow = this;
+			CountFor = CreateCounterKind(() => (float)EditorApplication.timeSinceStartup);
 		}
-		void OnDestroy()
+
+		void OnDisable()
 		{
+			// Debug.Log("OnDisable");
 			MySingleton.instance.CurrentWindow = null;
 		}
 
-		void OnInspectorUpdate()
+		void Update()
 		{
-			Repaint();
+			if (Showing) { ui_update.Elapsed(); }
 		}
-		void OnGUI()
-		{
 
-			EditorGUILayout.LabelField($"MouseOverWindow: {(MouseOverWindow != null ? MouseOverWindow.ToString() : "None")}");
-			EditorGUILayout.LabelField($"FocusWindow: {(FocusWindow != null ? FocusWindow.ToString() : "None")}");
-			EditorGUILayout.LabelField($"SelectedObject: {(SelectedObject != null ? SelectedObject.ToString() : "None")}");
+		void CreateGUI()
+		{
+			// Debug.Log("CreateGUI");
+			Label context_label = new() { isSelectable = true };
+			Label mouse_over_window_label = new() { isSelectable = true };
+			Label focus_window_label = new() { isSelectable = true };
+			Label selected_object_label = new() { isSelectable = true };
+			ScrollView scroll_view = new(ScrollViewMode.VerticalAndHorizontal);
+			scroll_view.contentContainer.Set4Padding(10f);
+			scroll_view.Add(context_label, mouse_over_window_label, focus_window_label, selected_object_label);
+			ui_update = CountFor(0.1f,
+				_ =>
+				{
+					context_label.text = $"main_stage_path: {StageUtility.GetMainStage().assetPath}";
+				},
+				_ => mouse_over_window_label.text = $"MouseOverWindow: {(MouseOverWindow != null ? MouseOverWindow.ToString() : "None")}",
+				_ => focus_window_label.text = $"FocusWindow: {(FocusWindow != null ? FocusWindow.ToString() : "None")}",
+				_ => selected_object_label.text = $"Selected Context Object: {(SelectedContextObject != null ? SelectedContextObject.ToString() : "None")}\n" +
+					$"SelectedObject: {(SelectedObject != null ? SelectedObject.ToString() : "None")}");
+			rootVisualElement.Add(scroll_view);
 		}
 	}
 
@@ -89,6 +98,7 @@ namespace Labs.ExamEditorGUI
 				CurrentWindow.FocusWindow = EditorWindow.focusedWindow;
 				CurrentWindow.MouseOverWindow = EditorWindow.mouseOverWindow;
 				CurrentWindow.SelectedObject = Selection.activeObject;
+				CurrentWindow.SelectedContextObject = Selection.activeContext;
 			}
 
 			if (EditorApplication.timeSinceStartup > check_time)

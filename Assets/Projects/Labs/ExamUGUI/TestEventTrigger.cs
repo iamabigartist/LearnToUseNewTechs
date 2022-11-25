@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using static UnityEngine.EventSystems.EventTriggerType;
-using static Util;
+using static Labs.ExamUGUI.Util;
 public class TestEventTrigger : MonoBehaviour
 {
 	void Start()
