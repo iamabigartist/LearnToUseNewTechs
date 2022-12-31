@@ -4,9 +4,6 @@ namespace Tests
 {
 	public class TestWhere
 	{
-		void A<T>()
-		{
-		}
 		
 		[Test]
 		public void Where1()
