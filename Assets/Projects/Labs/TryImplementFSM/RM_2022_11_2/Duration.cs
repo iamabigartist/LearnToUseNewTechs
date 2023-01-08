@@ -1,4 +1,4 @@
-﻿namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
+﻿namespace Labs.TryImplementFSM.RM_2022_11_2
 {
 	public struct Duration
 	{

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 namespace Labs.TryImplementFSM.RM_2022_11_2
 {
 
-	public class RuleMachine<TData, TParam> where TData : new()
+	public class RuleMachine<TData, TParam>
+		where TData : class
+		where TParam : class
 	{
 		// 如果要做Data和Param的继承，那么就在下一层类中继续使用泛型，并且使用泛型约束来继承父类型
 
@@ -19,20 +20,19 @@ namespace Labs.TryImplementFSM.RM_2022_11_2
 			}
 		}
 
-		protected RuleMachine(TData MachineData, Rule[] Rules)
+		protected RuleMachine(TData Data, Rule[] Rules)
 		{
-			this.MachineData = MachineData;
-			this.Rules = Rules.ToList();
+			this.Data = Data;
+			this.Rules = Rules;
 		}
 
-		public TData MachineData;
-		public List<Rule> Rules;
-
+		public TData Data;
+		public Rule[] Rules;
 		public void Run(TParam EntryParam)
 		{
 			foreach (var rule in Rules)
 			{
-				rule.ProcessData(MachineData, EntryParam);
+				rule.ProcessData(Data, EntryParam);
 			}
 		}
 	}

@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using static Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating.BonePlatingRM.MyEntryData.EntryType;
-using static Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating.BonePlatingRM.MyObjectData.BuffState;
+using static Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating.BonePlatingRM.MyObjectData.UsageStateType;
 namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 {
 	public class BonePlatingRM : RuleMachine<BonePlatingRM.MyObjectData, BonePlatingRM.MyEntryData>
 	{
 		public class MyObjectData
 		{
-			public enum BuffState
+			public enum UsageStateType
 			{
 				Ready,
 				Activated,
@@ -16,8 +16,7 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 			public Resource PlateCount;
 			public Duration ActivatedDuration;
 			public Duration CooldownDuration;
-			public BuffState CurBuffState;
-			public BuffState NextBuffState;
+			public State<UsageStateType> UsageState;
 		}
 		public class MyEntryData
 		{
@@ -29,88 +28,76 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 			public EntryType Type;
 		}
 
-		protected BonePlatingRM(MyObjectData MachineData, Rule[] Rules) : base(MachineData, Rules) {}
+		protected BonePlatingRM(MyObjectData Data, Rule[] Rules) : base(Data, Rules) {}
+
 		public static BonePlatingRM Create()
 		{
 			BonePlatingRM rm = new(
 				new()
 				{
 					PlateCount = new(3, 3),
-					ActivatedDuration = new(3),
-					CooldownDuration = new(10),
-					CurBuffState = Ready
 				},
 				new Rule[]
 				{
 					new("Activate", (Data, EntryData) =>
 					{
-						if (Data.CurBuffState == Ready
+						if (Data.UsageState.Current == Ready
 							&& EntryData.Type == AfterDamaged)
 						{
-							Data.NextBuffState = Activated;
+							Data.UsageState.Next = Activated;
 						}
 					}),
 					new("Damaged", (Data, EntryData) =>
 					{
-						if (Data.CurBuffState == Activated
+						if (Data.UsageState.Current == Activated
 							&& EntryData.Type == AfterDamaged)
 						{
 							Data.PlateCount.Cur--;
 							if (Data.PlateCount.Cur == 0)
 							{
-								Data.NextBuffState = Cooling;
+								Data.UsageState.Next = Cooling;
 							}
 						}
 					}),
 					new("Activating", (Data, EntryData) =>
 					{
-						if (Data.CurBuffState == Activated
+						if (Data.UsageState.Current == Activated
 							&& EntryData.Type == MachineUpdate)
 						{
 							if (Data.ActivatedDuration.TimeUp(Time.time))
 							{
-								Data.NextBuffState = Cooling;
+								Data.UsageState.Next = Cooling;
 							}
 						}
 					}),
 					new("Cooling", (Data, EntryData) =>
 					{
-						if (Data.CurBuffState == Cooling
+						if (Data.UsageState.Current == Cooling
 							&& EntryData.Type == MachineUpdate)
 						{
 							if (Data.CooldownDuration.TimeUp(Time.time))
 							{
-								Data.NextBuffState = Ready;
+								Data.UsageState.Next = Ready;
 							}
 						}
 					}),
-					new("BuffStateTransition", (Data, Param) =>
+					new("UsageStateTransition", (Data, Param) =>
 					{
 						if (Param.Type == MachineUpdate)
 						{
-							switch (Data.CurBuffState, Data.NextBuffState)
-							{
-								case (Ready, Activated):
-									{
-										Data.ActivatedDuration.Stamp = Time.time;
-										break;
-									}
-								case (Activated, Cooling):
-									{
-										Data.CooldownDuration.Stamp = Time.time;
-										break;
-									}
-								case (Cooling, Ready):
-									{
-										Data.PlateCount.Fill();
-										break;
-									}
-							}
-							Data.CurBuffState = Data.NextBuffState;
+							Data.UsageState.TransitState(out _);
 						}
 					})
 				}
 				);
+
+
+			rm.Data.UsageState = new(Ready, new()
+			{
+				{ (Ready, Activated), () => { rm.Data.ActivatedDuration.Stamp = Time.time; } },
+				{ (Activated, Cooling), () => { rm.Data.CooldownDuration.Stamp = Time.time; } },
+				{ (Cooling, Ready), () => { rm.Data.PlateCount.Fill(); } }
+			});
 
 
 			return rm;
