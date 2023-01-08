@@ -7,7 +7,7 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 {
 	public class BonePlatingRm : RuleMachine<BonePlatingRm.MyObjectData, BonePlatingRm.MyEntryData>
 	{
-		public BonePlatingRm(MyObjectData Data, params Rule[] Rules) : base(Data, Rules) {}
+		public BonePlatingRm(MyObjectData Data, params Rule[] Rules) {}
 		public class MyObjectData
 		{
 			public enum BuffState

@@ -51,10 +51,10 @@ namespace Labs.ExamEditorGUI
 		void CreateGUI()
 		{
 			// Debug.Log("CreateGUI");
-			Label context_label = new() { isSelectable = true };
-			Label mouse_over_window_label = new() { isSelectable = true };
-			Label focus_window_label = new() { isSelectable = true };
-			Label selected_object_label = new() { isSelectable = true };
+			Label context_label = new() { focusable = true };
+			Label mouse_over_window_label = new() { focusable = true };
+			Label focus_window_label = new() { focusable = true };
+			Label selected_object_label = new() { focusable = true };
 			ScrollView scroll_view = new(ScrollViewMode.VerticalAndHorizontal);
 			scroll_view.contentContainer.Set4Padding(10f);
 			scroll_view.Add(context_label, mouse_over_window_label, focus_window_label, selected_object_label);

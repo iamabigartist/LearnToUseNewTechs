@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 namespace Labs.TryImplementFSM.RM_2022_11_2
 {
-	public class RuleMachine<TData, TParam>
+	public class RuleMachine<TData, TParam> where TData : new()
 	{
 		public delegate void ProcessDataDelegate(TData Data, TParam Param);
 		public class Rule
@@ -17,10 +16,10 @@ namespace Labs.TryImplementFSM.RM_2022_11_2
 		}
 		public TData MachineData;
 		public List<Rule> Rules;
-		public RuleMachine(TData MachineData, params Rule[] Rules)
+		public RuleMachine()
 		{
-			this.MachineData = MachineData;
-			this.Rules = Rules.ToList();
+			MachineData = new();
+			Rules = new();
 		}
 
 		public void Run(TParam EntryParam)
