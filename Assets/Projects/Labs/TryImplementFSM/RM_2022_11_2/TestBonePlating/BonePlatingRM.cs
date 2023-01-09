@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using static Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating.BonePlatingRM.MyEntryData.EntryType;
 using static Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating.BonePlatingRM.UsageStateType;
 namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
@@ -22,12 +23,18 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 			Cooling
 		}
 
+	#region Data
+
 		public Resource PlateCount;
 		public TimeStamp ActivatedStamp;
 		public TimeStamp CooldownStamp;
 		public float ActivatedDuration;
 		public float CooldownDuration;
 		public State<UsageStateType> UsageState;
+
+	#endregion
+
+	#region Rules
 
 		void OnActivate()
 		{
@@ -83,23 +90,31 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 			}
 		}
 
-		protected override Rule[] CreateRules()
+	#endregion
+
+	#region RMConfig
+
+		protected override Action[] CreateRules()
 		{
-			return new Rule[]
+			return new Action[]
 			{
-				new("Activate", OnActivate),
-				new("Damaged", OnDamaged),
-				new("Activating", OnActivating),
-				new("Cooling", OnCooling),
-				new("TransitUsageState", OnTransitUsageState)
+				OnActivate,
+				OnDamaged,
+				OnActivating,
+				OnCooling,
+				OnTransitUsageState
 			};
 		}
 
-		BonePlatingRM()
+	#endregion
+
+	#region Factory
+
+		public BonePlatingRM()
 		{
 			PlateCount = new(3, 3);
 			ActivatedDuration = 3;
-			CooldownDuration = 10;
+			CooldownDuration = 15;
 			ActivatedStamp = new();
 			CooldownStamp = new();
 			UsageState = new(Ready, new()
@@ -110,23 +125,8 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 			});
 		}
 
-		public static BonePlatingRM Create()
-		{
-			BonePlatingRM rm = new(
-				new()
-					{},
-				new Rule[]
-				{
-					new("Activate", (Data, EntryData) => {}),
-					new("Damaged", (Data, EntryData) => {}),
-					new("Activating", (Data, EntryData) => {}),
-					new("Cooling", (Data, EntryData) => {}),
-					new("UsageStateTransition", (Data, Param) => {})
-				}
-				);
+	#endregion
 
-			return rm;
-		}
 	}
 
 }
