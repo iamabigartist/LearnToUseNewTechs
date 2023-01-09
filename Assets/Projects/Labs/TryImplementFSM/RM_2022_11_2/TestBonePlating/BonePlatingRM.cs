@@ -14,9 +14,11 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 				Cooling
 			}
 			public Resource PlateCount;
-			public Duration ActivatedDuration;
-			public Duration CooldownDuration;
-			public State<UsageStateType> UsageState;
+			public TimeStamp ActivatedStamp;
+			public TimeStamp CooldownStamp;
+			public float ActivatedDuration;
+			public float CooldownDuration;
+			public State<UsageStateType, ProcessDataDelegate> UsageState;
 		}
 		public class MyEntryData
 		{
@@ -28,6 +30,9 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 			public EntryType Type;
 		}
 
+		
+		
+		
 		protected BonePlatingRM(MyObjectData Data, Rule[] Rules) : base(Data, Rules) {}
 
 		public static BonePlatingRM Create()
@@ -36,6 +41,16 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 				new()
 				{
 					PlateCount = new(3, 3),
+					ActivatedDuration = 3,
+					CooldownDuration = 10,
+					ActivatedStamp = new(),
+					CooldownStamp = new(),
+					UsageState = new(Ready, new()
+					{
+						{ (Ready, Activated), (Data, _) => { Data.ActivatedStamp.Value = Time.time; } },
+						{ (Activated, Cooling), (Data, _) => { Data.CooldownStamp.Value = Time.time; } },
+						{ (Cooling, Ready), (Data, _) => { Data.PlateCount.Fill(); } }
+					})
 				},
 				new Rule[]
 				{
@@ -64,7 +79,7 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 						if (Data.UsageState.Current == Activated
 							&& EntryData.Type == MachineUpdate)
 						{
-							if (Data.ActivatedDuration.TimeUp(Time.time))
+							if (Data.ActivatedStamp.TimeUp(Time.time, Data.ActivatedDuration))
 							{
 								Data.UsageState.Next = Cooling;
 							}
@@ -75,7 +90,7 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 						if (Data.UsageState.Current == Cooling
 							&& EntryData.Type == MachineUpdate)
 						{
-							if (Data.CooldownDuration.TimeUp(Time.time))
+							if (Data.CooldownStamp.TimeUp(Time.time, Data.CooldownDuration))
 							{
 								Data.UsageState.Next = Ready;
 							}
@@ -85,20 +100,14 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 					{
 						if (Param.Type == MachineUpdate)
 						{
-							Data.UsageState.TransitState(out _);
+							if (Data.UsageState.TransitState(out _, out var process))
+							{
+								process.Invoke(Data, Param);
+							}
 						}
 					})
 				}
 				);
-
-
-			rm.Data.UsageState = new(Ready, new()
-			{
-				{ (Ready, Activated), () => { rm.Data.ActivatedDuration.Stamp = Time.time; } },
-				{ (Activated, Cooling), () => { rm.Data.CooldownDuration.Stamp = Time.time; } },
-				{ (Cooling, Ready), () => { rm.Data.PlateCount.Fill(); } }
-			});
-
 
 			return rm;
 		}

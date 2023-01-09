@@ -10,7 +10,7 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 	{
 		ISerializer serializer;
 		BonePlatingRM bone_plating_rm;
-		float cur_remain_time;
+		double cur_remain_time;
 		void Start()
 		{
 			serializer = new SerializerBuilder().
@@ -22,11 +22,12 @@ namespace Labs.TryImplementFSM.RM_2022_11_2.TestBonePlating
 		void Update()
 		{
 			bone_plating_rm.Run(new() { Type = MachineUpdate });
-			cur_remain_time = bone_plating_rm.Data.UsageState.Current switch
+			var data = bone_plating_rm.Data;
+			cur_remain_time = data.UsageState.Current switch
 			{
 				Ready => 0,
-				Activated => bone_plating_rm.Data.ActivatedDuration.RemainTime(Time.time),
-				Cooling => bone_plating_rm.Data.CooldownDuration.RemainTime(Time.time),
+				Activated => data.ActivatedStamp.RemainTime(Time.time, data.ActivatedDuration),
+				Cooling => data.CooldownStamp.RemainTime(Time.time, data.CooldownDuration),
 				_ => throw new ArgumentOutOfRangeException()
 			};
 		}
