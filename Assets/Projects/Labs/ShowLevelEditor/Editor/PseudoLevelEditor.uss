@@ -1,0 +1,36 @@
+Label {
+    font-size: 12px;
+    -unity-font-style: normal;
+    color: rgb(185, 185, 185);
+    padding-left: 10px;
+}
+
+Label.section-title {
+    color: rgb(209, 209, 209);
+    -unity-font-style: bold;
+    font-size: 12px;
+    -unity-slice-left: 2;
+    padding-left: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.unity-base-field__input {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 0;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-size: 12px;
+    background-color: rgb(42, 42, 42);
+    color: rgb(210, 210, 210);
+    border-left-color: rgb(13, 13, 13);
+    border-right-color: rgb(13, 13, 13);
+    border-top-color: rgb(13, 13, 13);
+    border-bottom-color: rgb(13, 13, 13);
+    flex-grow: 2;
+    flex-shrink: 0;
+}

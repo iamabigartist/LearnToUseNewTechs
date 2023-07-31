@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Projects/Labs/ShowLevelEditor/Editor/PseudoLevelEditor.uss?fileID=7433441132597879392&amp;guid=a7ec90860a2f0c6468cf83b82b396bec&amp;type=3#PseudoLevelEditor" />
+    <ui:VisualElement name="Panel" style="flex-grow: 1; background-color: rgb(56, 56, 56); padding-left: 11px; padding-right: 11px; padding-top: 11px; padding-bottom: 11px;">
+        <ui:Label tabindex="-1" text="Level L1-S1" display-tooltip-when-elided="true" name="UpSection" class="section-title" />
+        <ui:IntegerField label="Bpm" value="120" name="LevelBpmField" />
+        <ui:FloatField label="Level Height" value="64" name="LevelHeightField" />
+        <ui:FloatField label="Roshan Speed (/s)" value="3.2" name="RoshanSpeedField" />
+        <ui:Label tabindex="-1" text="everything else about this level&#10;------------------------------------------------&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;------------------------------------------------&#10;" display-tooltip-when-elided="true" name="LevelContent" style="margin-top: 21px; margin-bottom: 20px;" />
+        <ui:Label tabindex="-1" text="Selected GameObject" display-tooltip-when-elided="true" name="SelectedSectionTItle" class="section-title" />
+        <ui:VisualElement name="SelectedInfo" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: flex-start; align-self: auto; align-items: center; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 5px; margin-top: 5px; margin-bottom: 4px; flex-shrink: 0;">
+            <ui:Label tabindex="-1" text="CurrentSelected: " display-tooltip-when-elided="true" name="CurrentSelected" />
+            <ui:Label tabindex="-1" text="Nothing" display-tooltip-when-elided="true" name="SelectedName" />
+        </ui:VisualElement>
+        <ui:FloatField label="Height" value="0" name="HeightField" />
+        <ui:FloatField label="Time" value="0" name="TimeField" />
+        <ui:FloatField label="Beat" value="0" name="BeatField" />
+    </ui:VisualElement>
+</ui:UXML>
