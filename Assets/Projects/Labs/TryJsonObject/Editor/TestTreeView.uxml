@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Projects/Labs/TryJsonObject/Editor/TestTreeView.uss?fileID=7433441132597879392&amp;guid=d501fd4dd8dad564fb08efeefcc07708&amp;type=3#TestTreeView" />
+    <ui:VisualElement name="VisualElement" class="window">
+        <ui:VisualElement class="container" style="flex-grow: 1; background-color: rgb(56, 56, 56); flex-shrink: 0; height: 250px;">
+            <ui:Label tabindex="-1" text="Tree View" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 20px;" />
+            <ui:TreeView view-data-key="unity-tree-view" focusable="true" reorderable="false" horizontal-scrolling="true" auto-expand="false" show-alternating-row-backgrounds="All" selection-type="Multiple" show-border="true" virtualization-method="DynamicHeight" class="view" />
+        </ui:VisualElement>
+        <ui:VisualElement class="container" style="flex-grow: 1; background-color: rgb(56, 56, 56); flex-shrink: 0; height: 250px;">
+            <ui:Label tabindex="-1" text="List View" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 20px;" />
+            <ui:ListView focusable="true" class="view" style="padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

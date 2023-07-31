@@ -1,0 +1,63 @@
+.unity-label {
+    color: rgb(196, 196, 196);
+    -unity-text-align: middle-left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container {
+    border-left-color: rgb(43, 43, 43);
+    border-right-color: rgb(43, 43, 43);
+    border-top-color: rgb(43, 43, 43);
+    border-bottom-color: rgb(43, 43, 43);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.window {
+    flex-shrink: 0;
+    flex-grow: 0;
+    border-left-color: rgb(0, 255, 51);
+    border-right-color: rgb(0, 255, 51);
+    border-top-color: rgb(0, 255, 51);
+    border-bottom-color: rgb(0, 255, 51);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.view {
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out-bounce;
+    padding-left: 20px;
+    padding-right: 0;
+    padding-top: 20px;
+    padding-bottom: 0;
+    background-color: rgba(42, 42, 42, 0.21);
+    scale: 1 0.1;
+    translate: 0 0;
+    transform-origin: top;
+}
+
+.view:focus {
+    transition-timing-function: ease-out-elastic;
+    transition-duration: 0.5s;
+    scale: 1 1;
+}
+
+.view-container {
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+}
