@@ -10,7 +10,6 @@ public class TestTreeView : EditorWindow
 #region SerializedData
 
 	[SerializeField] VisualTreeAsset m_VisualTreeAsset = default;
-
 #endregion
 
 #region Reference

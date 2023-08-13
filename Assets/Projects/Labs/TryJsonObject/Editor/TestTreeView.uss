@@ -38,26 +38,28 @@
 }
 
 .view {
-    transition-duration: 0.5s;
-    transition-timing-function: ease-out-bounce;
-    padding-left: 20px;
+    transition-duration: 0s;
+    transition-timing-function: ease-in-back;
+    padding-left: 5px;
     padding-right: 0;
-    padding-top: 20px;
+    padding-top: 5px;
     padding-bottom: 0;
     background-color: rgba(42, 42, 42, 0.21);
-    scale: 1 0.1;
-    translate: 0 0;
-    transform-origin: top;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(128, 128, 128, 0);
+    border-right-color: rgba(128, 128, 128, 0);
+    border-top-color: rgba(128, 128, 128, 0);
+    border-bottom-color: rgba(128, 128, 128, 0);
 }
 
-.view:focus {
-    transition-timing-function: ease-out-elastic;
-    transition-duration: 0.5s;
-    scale: 1 1;
+.view:hover {
+    transition-timing-function: ease-out-back;
+    transition-duration: 0s;
+    border-left-color: rgb(138, 138, 138);
 }
 
 .view-container {
-    flex-grow: 1;
-    flex-shrink: 0;
-    justify-content: center;
 }
