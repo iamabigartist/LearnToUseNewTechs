@@ -30,19 +30,19 @@ public static class TestUIs
 							{
 								(new Label("2.1"), default),
 								(new Label("2.2"), default),
-								(new Box(),new Node[]
+								(new Box(), new Node[]
 								{
 									(new Label("2.3.1"), default),
-									(new Label("2.3.2"), default),
+									(new Label("2.3.2"), default)
 								})
 							}),
 							(new Box(), new Node[]
 							{
 								(new Label("3.1"), default),
-								(new Label("3.2"), default),
+								(new Label("3.2"), default)
 							})
 						}
-					),
+					)
 				}
 			)
 			);
