@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
-namespace Labs.ExamUGUI
+namespace Labs.ExamUI.ExamUGUI
 {
 	public static class Util
 	{

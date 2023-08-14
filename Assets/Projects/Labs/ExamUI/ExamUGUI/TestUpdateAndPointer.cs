@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+namespace Labs.ExamUI.ExamUGUI
+{
 public class TestUpdateAndPointer : MonoBehaviour, IPointerDownHandler
 {
 
@@ -17,4 +19,5 @@ public class TestUpdateAndPointer : MonoBehaviour, IPointerDownHandler
 			Debug.Log("Success");
 		}
 	}
+}
 }

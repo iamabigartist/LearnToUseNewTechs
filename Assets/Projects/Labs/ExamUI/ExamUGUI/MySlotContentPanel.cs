@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-namespace Labs.ExamUGUI
+namespace Labs.ExamUI.ExamUGUI
 {
 	public class MySlotContentPanel : MonoBehaviour
 	{

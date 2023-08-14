@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using static Labs.ExamUGUI.BackpackPanel.InputEvent;
-namespace Labs.ExamUGUI
+using static Labs.ExamUI.ExamUGUI.BackpackPanel.InputEvent;
+namespace Labs.ExamUI.ExamUGUI
 {
 	public class BackpackPanel : MonoBehaviour
 	{

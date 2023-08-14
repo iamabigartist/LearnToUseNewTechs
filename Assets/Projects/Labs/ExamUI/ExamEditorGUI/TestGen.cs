@@ -10,6 +10,8 @@ using UnityEngine;
 using static System.IO.Path;
 using static UnityEditor.AssetDatabase;
 using static UnityEngine.Application;
+namespace Labs.ExamUI.ExamEditorGUI
+{
 public static class TestGen
 {
 	const string GENERATED_PATH = "GeneratedSource";
@@ -60,4 +62,5 @@ public static class UnityTags
 		Refresh();
 	}
 
+}
 }

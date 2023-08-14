@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-namespace Labs.ExamUGUI
+namespace Labs.ExamUI.ExamUGUI
 {
 	public class TestEventHandler :MonoBehaviour,IPointerUpHandler,IPointerDownHandler
 	{

@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Labs.ExamUGUI;
+using Labs.ExamUI.ExamUGUI;
 using PrototypePackages.PrototypeUtils;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static PrototypePackages.TimeUtils.CounterUtil<float>;
 using Object = UnityEngine.Object;
-namespace Labs.ExamEditorGUI
+namespace Labs.ExamUI.ExamEditorGUI
 {
 	public class MySingletonWindow : EditorWindow
 	{

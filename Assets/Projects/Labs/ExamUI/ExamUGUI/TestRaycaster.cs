@@ -4,7 +4,7 @@ using PrototypePackages.PrototypeUtils;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-namespace Labs.ExamUGUI
+namespace Labs.ExamUI.ExamUGUI
 {
 	public class TestRaycaster : MonoBehaviour
 	{

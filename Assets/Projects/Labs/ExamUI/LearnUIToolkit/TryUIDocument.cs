@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using Utils;
-namespace Labs.LearnUIToolkit
+namespace Labs.ExamUI.LearnUIToolkit
 {
 	public class TryUIDocument : MonoBehaviour
 	{

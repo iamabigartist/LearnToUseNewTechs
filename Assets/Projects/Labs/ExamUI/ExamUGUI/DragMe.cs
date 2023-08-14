@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+namespace Labs.ExamUI.ExamUGUI
+{
 [RequireComponent(typeof(Image))]
 public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -78,4 +79,5 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         }
         return comp;
     }
+}
 }

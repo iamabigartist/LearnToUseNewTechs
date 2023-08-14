@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-namespace Labs.ShowLevelEditor
+namespace Labs.ExamUI.ShowLevelEditor.Editor
 {
 public class PseudoLevelEditor : EditorWindow
 {

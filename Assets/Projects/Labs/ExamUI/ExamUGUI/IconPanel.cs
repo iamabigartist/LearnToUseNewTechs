@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace Labs.ExamUGUI
+namespace Labs.ExamUI.ExamUGUI
 {
 	public class IconPanel : MonoBehaviour
 	{

@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+namespace Labs.ExamUI.ExamUGUI
+{
 public class TextBubbleController : MonoBehaviour, IDragHandler
 {
 	public RectTransform Content;
@@ -39,4 +41,5 @@ public class TextBubbleController : MonoBehaviour, IDragHandler
 	}
 
 	public void OnDrag(PointerEventData eventData) {}
+}
 }

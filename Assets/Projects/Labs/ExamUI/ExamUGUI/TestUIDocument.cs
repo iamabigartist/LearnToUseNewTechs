@@ -1,6 +1,7 @@
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
+namespace Labs.ExamUI.ExamUGUI
+{
 public class TestUIDocument : MonoBehaviour
 {
 	UIDocument document;
@@ -26,4 +27,5 @@ public class TestUIDocument : MonoBehaviour
 		});
 		root.Add(a);
 	}
+}
 }

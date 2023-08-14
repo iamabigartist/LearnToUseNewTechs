@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-namespace Labs.ExamEditorGUI
+namespace Labs.ExamUI.ExamEditorGUI
 {
 	public static class TestPing
 	{

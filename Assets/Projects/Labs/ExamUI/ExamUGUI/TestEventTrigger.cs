@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 using static UnityEngine.EventSystems.EventTriggerType;
-using static Labs.ExamUGUI.Util;
+using static Labs.ExamUI.ExamUGUI.Util;
+namespace Labs.ExamUI.ExamUGUI
+{
 public class TestEventTrigger : MonoBehaviour
 {
 	void Start()
@@ -20,4 +21,5 @@ public class TestEventTrigger : MonoBehaviour
 
 
 	}
+}
 }

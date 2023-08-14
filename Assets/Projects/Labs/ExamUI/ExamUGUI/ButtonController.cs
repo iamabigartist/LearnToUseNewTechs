@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEngine.EventSystems.EventTrigger;
-
+namespace Labs.ExamUI.ExamUGUI
+{
 public abstract class BasePanelController : MonoBehaviour
 {
 	void Awake()
@@ -53,23 +52,23 @@ public class ButtonController : MonoBehaviour
 		m_slider.onValueChanged.AddListener(Arg0 => Debug.Log($"Slider Value {Arg0}"));
 
 
-		var callback_enter = new TriggerEvent();
+		var callback_enter = new EventTrigger.TriggerEvent();
 		callback_enter.AddListener(Arg0 =>
 		{
 			m_button_text.text = "鼠标进入按钮范围。";
 		});
-		var pointer_enter_entry = new Entry()
+		var pointer_enter_entry = new EventTrigger.Entry()
 		{
 			eventID = EventTriggerType.PointerEnter,
 			callback = callback_enter
 		};
 
-		var callback_exit = new TriggerEvent();
+		var callback_exit = new EventTrigger.TriggerEvent();
 		callback_exit.AddListener(Arg0 =>
 		{
 			m_button_text.text = $"点击次数：{click_count}";
 		});
-		var pointer_exit_entry = new Entry()
+		var pointer_exit_entry = new EventTrigger.Entry()
 		{
 			eventID = EventTriggerType.PointerExit,
 			callback = callback_exit
@@ -86,4 +85,5 @@ public class ButtonController : MonoBehaviour
 	}
 
 	void Update() {}
+}
 }

@@ -1,9 +1,7 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
-namespace Labs.ExamUGUI
+namespace Labs.ExamUI.ExamUGUI
 {
 	public class PointerMoveMessager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	{
