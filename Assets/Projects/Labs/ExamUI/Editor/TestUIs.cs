@@ -1,4 +1,5 @@
-﻿using PrototypePackages.MainThreadExecutor.Editor;
+﻿using Labs.ExamUI.ExamNewUITools;
+using PrototypePackages.MainThreadExecutor.Editor;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,13 +12,8 @@ public static class TestUIs
 	[MenuItem("Labs/ExamUI/TestTreeConstruct")]
 	public static void TestTreeConstruct()
 	{
-		var window = new LiteEditorWindow("TestTreeConstruct")
-		{
-			window =
-			{
-				name = "TestTreeConstruct"
-			}
-		};
+		var window = new LiteEditorWindow("TestTreeConstruct");
+		window.Show();
 		var root = window.root;
 		root.styleSheets.Add(Resources.Load<StyleSheet>("TestBox"));
 		TreeConnect((parent, child) => parent.Add(child),
@@ -46,6 +42,14 @@ public static class TestUIs
 				}
 			)
 			);
+	}
+
+	[MenuItem("Labs/ExamUI/TestToggle")]
+	public static void TestToggle()
+	{
+		var window = new LiteEditorWindow("TestToggle");
+		var root = window.root;
+		root.Add(new ToggleB());
 		window.Show();
 	}
 }
