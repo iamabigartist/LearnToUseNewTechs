@@ -1,4 +1,5 @@
-﻿using Labs.ExamUI.ExamNewUITools;
+using Labs.ExamUI.ExamNewUITools;
+using Labs.ExamUI.ExamFoldout;
 using PrototypePackages.MainThreadExecutor.Editor;
 using UnityEditor;
 using UnityEngine;
@@ -49,7 +50,9 @@ public static class TestUIs
 	{
 		var window = new LiteEditorWindow("TestToggle");
 		var root = window.root;
-		root.Add(new ToggleB());
+		var toggle = new ToggleA();
+		toggle.IconContainer.Add(new Label("▼"));
+		root.Add(toggle);
 		window.Show();
 	}
 }
