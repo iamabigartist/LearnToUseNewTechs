@@ -10,11 +10,13 @@
 }
 
 .toggle-a__icon-on {
-    rotate: -90deg;
-    transition-duration: 0.15s;
+    rotate: 0;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out-cubic;
 }
 
 .toggle-a__icon-off {
-    rotate: 0;
-    transition-duration: 0.15s;
+    rotate: -90deg;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out-cubic;
 }

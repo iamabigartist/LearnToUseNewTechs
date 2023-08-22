@@ -50,7 +50,7 @@ public class ToggleA : VisualElement
 		InitStyle();
 		value = false;
 		icon = new();
-		Add(icon);
+		hierarchy.Add(icon);
 		icon.AddToClassList(IconUssName);
 		icon.AddToClassList(IconOffUssName);
 		this.AddManipulator(new Clickable(OnClick));
@@ -60,9 +60,9 @@ public class ToggleA : VisualElement
 
 #region Interface
 
-	public VisualElement IconContainer => icon;
 	public bool Value;
 	public Action<bool> OnValueChanged;
+	public override VisualElement contentContainer => icon;
 
 #endregion
 
