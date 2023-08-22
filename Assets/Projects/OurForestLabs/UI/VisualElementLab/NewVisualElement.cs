@@ -1,15 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine.UIElements;
-namespace UI
+namespace Projects.OurForestLabs.UI.VisualElementLab
 {
     public class NewVisualElement : VisualElement
     {
 
         public string MmMStRing { get; set; }
-        void fu()
-        {
-
-        }
 
     #region UxmlFactory
 

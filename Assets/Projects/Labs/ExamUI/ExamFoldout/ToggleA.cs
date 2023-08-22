@@ -19,9 +19,14 @@ public class ToggleA : VisualElement
 
 #region Process
 
-	void OnClick()
+	void SwitchValue()
 	{
 		value = !value;
+	}
+
+	void OnClick()
+	{
+		SwitchValue();
 		OnValueChanged?.Invoke(value);
 		ChangeIconClassName();
 	}
@@ -38,22 +43,31 @@ public class ToggleA : VisualElement
 
 #region Init
 
-	void InitStyle()
+	void InitIcon()
 	{
-		tabIndex = 0;
-		focusable = true;
-		styleSheets.Add(Resources.Load<StyleSheet>("ToggleA"));
-	}
-
-	public ToggleA()
-	{
-		InitStyle();
-		value = false;
 		icon = new();
 		hierarchy.Add(icon);
+	}
+	void InitStyle()
+	{
+		styleSheets.Add(Resources.Load<StyleSheet>("ToggleA"));
+	}
+	void InitToggleValue(bool init_value)
+	{
+		value = init_value;
 		icon.AddToClassList(IconUssName);
-		icon.AddToClassList(IconOffUssName);
+		icon.AddToClassList(value ? IconOnUssName : IconOffUssName);
+	}
+	void InitManipulator()
+	{
 		this.AddManipulator(new Clickable(OnClick));
+	}
+	public ToggleA()
+	{
+		InitIcon();
+		InitToggleValue(true);
+		InitManipulator();
+		InitStyle();
 	}
 
 #endregion
@@ -63,6 +77,28 @@ public class ToggleA : VisualElement
 	public bool Value;
 	public Action<bool> OnValueChanged;
 	public override VisualElement contentContainer => icon;
+	public void SetValue(bool new_value, bool notify)
+	{
+		value = new_value;
+		if (notify) { OnValueChanged?.Invoke(value); }
+		ChangeIconClassName();
+	}
+
+#endregion
+
+#region UXML
+
+	public new class UxmlFactory : UxmlFactory<ToggleA, UxmlTraits> {}
+	public new class UxmlTraits : VisualElement.UxmlTraits
+	{
+		UxmlBoolAttributeDescription m_Value = new() { name = "value", defaultValue = true };
+		public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
+		{
+			base.Init(ve, bag, cc);
+			if (ve is not ToggleA toggle) { return; }
+			toggle.SetValue(m_Value.GetValueFromBag(bag, cc), false);
+		}
+	}
 
 #endregion
 
