@@ -1,0 +1,23 @@
+.ResizeCorner {
+    width: 15px;
+    height: 15px;
+    cursor: url('project://database/Assets/Samples/Input%20System/1.3.0/Rebinding%20UI/Icons/PS4_Cross.png?fileID=2800000&guid=2da2d15ce082e12448ac493c55a33f0f&type=3#PS4_Cross');
+}
+
+.ResizeHorizontalBar {
+    height: 15px;
+    flex-grow: 1;
+    cursor: url('project://database/Assets/Samples/Input%20System/1.3.0/Rebinding%20UI/Icons/PS4_Square.png?fileID=2800000&guid=428de70370df69d45bd4c0025b7ba36e&type=3#PS4_Square');
+}
+
+.ResizeVerticalBar {
+    height: auto;
+    width: 15px;
+    cursor: url('project://database/Assets/Samples/Input%20System/1.3.0/Rebinding%20UI/Icons/PS4_Square.png?fileID=2800000&guid=428de70370df69d45bd4c0025b7ba36e&type=3#PS4_Square');
+}
+
+.DragBar {
+    height: 20px;
+    background-color: rgb(40, 40, 40);
+    cursor: url('project://database/Assets/Samples/Input%20System/1.3.0/Rebinding%20UI/Icons/PS4_Circle.png?fileID=2800000&guid=c7f381483fb41f14e935b2d6d9fec62f&type=3#PS4_Circle');
+}

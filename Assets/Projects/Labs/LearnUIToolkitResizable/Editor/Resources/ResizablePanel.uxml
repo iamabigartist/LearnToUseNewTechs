@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Projects/Labs/LearnUIToolkitResizable/Editor/Resources/ResizablePanelUSS.uss?fileID=7433441132597879392&amp;guid=4a0b544e0adfa6c4c9c9dc986a06eebf&amp;type=3#ResizablePanelUSS" />
+    <ui:VisualElement name="BasePanel" style="flex-grow: 1; align-items: stretch; align-self: auto; justify-content: space-around; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="Border" style="flex-grow: 1; position: absolute; left: 0; top: 0; bottom: 0; right: 0; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgb(86, 86, 86); border-right-color: rgb(86, 86, 86); border-top-color: rgb(86, 86, 86); border-bottom-color: rgb(86, 86, 86);" />
+        <ui:VisualElement name="Line1Panel" style="flex-direction: row;">
+            <ui:VisualElement name="UpLeftCorner" class="ResizeCorner" />
+            <ui:VisualElement name="UpBar" class="ResizeHorizontalBar" />
+            <ui:VisualElement name="UpRrightCorner" class="ResizeCorner" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Line2Panel" style="flex-direction: row; justify-content: space-between; flex-grow: 1;">
+            <ui:VisualElement name="LeftBar" class="ResizeVerticalBar" />
+            <ui:VisualElement name="ContentPanel" style="flex-grow: 1;">
+                <ui:VisualElement name="DragBar" class="DragBar" />
+                <ui:ScrollView name="ContentScrollView" style="flex-grow: 1;">
+                    <ui:VisualElement style="flex-grow: 1; width: 443px; height: 554px;" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+            <ui:VisualElement name="RightBar" class="ResizeVerticalBar" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Line3Panel" style="flex-direction: row;">
+            <ui:VisualElement name="DownLeftCorner" class="ResizeCorner" />
+            <ui:VisualElement name="DownBar" class="ResizeHorizontalBar" />
+            <ui:VisualElement name="DownRrightCorner" class="ResizeCorner" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
