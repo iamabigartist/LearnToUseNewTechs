@@ -1,5 +1,5 @@
+using ProjectUtils;
 using UnityEngine;
-using Utils;
 using static Labs.TryImplementFSM.FSM_2022_10.MyEventData.EventType;
 using static Labs.TryImplementFSM.FSM_2022_10.MyState;
 namespace Labs.TryImplementFSM.FSM_2022_10

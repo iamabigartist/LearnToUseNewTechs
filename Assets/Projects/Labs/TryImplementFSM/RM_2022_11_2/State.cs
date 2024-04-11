@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using static Utils.MiscUtils;
+using static ProjectUtils.MiscUtils;
 namespace Labs.TryImplementFSM.RM_2022_11_2
 {
 	public class State<TEnum>

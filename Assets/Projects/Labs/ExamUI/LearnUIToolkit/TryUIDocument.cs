@@ -1,6 +1,6 @@
+using ProjectUtils;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Utils;
 namespace Labs.ExamUI.LearnUIToolkit
 {
 	public class TryUIDocument : MonoBehaviour

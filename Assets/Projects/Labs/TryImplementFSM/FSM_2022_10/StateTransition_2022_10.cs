@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Utils;
+using ProjectUtils;
 namespace Labs.TryImplementFSM.FSM_2022_10
 {
 	// 待实现，animator的trigger event调用建议在自己的模型中使用message pipeline进行实现, 因为这样机器入口更加一致。事件附带的信息，实际上是只存在于那一时刻，用完即刻删掉的信息，因此如果使用固定的变量位置保存，可能会造成不方便，因为每种事件都要在data中留地方，而不是写成函数接口。而反过来，写成函数接口就必然导致信息的不够灵活。
