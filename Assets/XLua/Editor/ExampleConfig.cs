@@ -89,11 +89,11 @@ public static class ExampleConfig
 					&& type.BaseType != typeof(MulticastDelegate) && !type.IsInterface && !type.IsEnum
 				select type;
 
-			string[] customAssemblys = new string[]
+			string[] customAssembles = new string[]
 			{
 				"Assembly-CSharp"
 			};
-			var customTypes = from assembly in customAssemblys.Select(s => Assembly.Load(s))
+			var customTypes = from assembly in customAssembles.Select(s => Assembly.Load(s))
 				from type in assembly.GetExportedTypes()
 				where type.Namespace == null || (!type.Namespace.StartsWith("XLua")
 					&& type.BaseType != typeof(MulticastDelegate) && !type.IsInterface && !type.IsEnum)
