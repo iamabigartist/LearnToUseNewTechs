@@ -8,17 +8,17 @@ namespace Labs.LearnToUseXLua.xLuaConfigs
 {
 public static class HotFixConfig
 {
-	/***************热补丁可以参考这份自动化配置***************/
-	[Hotfix]
-	static IEnumerable<Type> HotfixInject
-	{
-		get
-		{
-			return from type in Assembly.Load("Assembly-CSharp").GetTypes()
-				where type.Namespace == null || !type.Namespace.StartsWith("XLua")
-				select type;
-		}
-	}
+	// /***************热补丁可以参考这份自动化配置***************/
+	// [Hotfix]
+	// static IEnumerable<Type> HotfixInject
+	// {
+	// 	get
+	// 	{
+	// 		return from type in Assembly.Load("Assembly-CSharp").GetTypes()
+	// 			where type.Namespace == null || !type.Namespace.StartsWith("XLua")
+	// 			select type;
+	// 	}
+	// }
 	//--------------begin 热补丁自动化配置-------------------------
 	
 
