@@ -32,11 +32,13 @@ namespace XLuaTest
     {
         #region Supported methods
 
+        [LuaCallCSharp]
         public void Test1<T>(T a) where T : Foo1Parent
         {
             Debug.Log(string.Format("Test1<{0}>", typeof(T)));
         }
 
+        [LuaCallCSharp]
         public T1 Test2<T1, T2>(T1 a, T2 b, GameObject c) where T1 : Foo1Parent where T2 : Foo2Parent
         {
             Debug.Log(string.Format("Test2<{0},{1}>", typeof(T1), typeof(T2)), c);
