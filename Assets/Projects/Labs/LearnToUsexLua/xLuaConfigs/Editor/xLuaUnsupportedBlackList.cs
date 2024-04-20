@@ -36,6 +36,7 @@ public static class XLuaUnsupportedBlackList
 		new() { "System.IO.DirectoryInfo", "CreateSubdirectory", "System.String", "System.Security.AccessControl.DirectorySecurity" },
 		new() { "System.IO.DirectoryInfo", "Create", "System.Security.AccessControl.DirectorySecurity" },
 		new() { "UnityEngine.MonoBehaviour", "runInEditMode" }
+		
 	};
 
 #if UNITY_2018_1_OR_NEWER

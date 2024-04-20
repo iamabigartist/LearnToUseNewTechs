@@ -160,6 +160,10 @@ namespace XLua
                 else
                 {
                     Utils.ReflectionWrap(L, type, privateAccessibleFlags.Contains(type));
+                    // if (!typeof(Delegate).IsAssignableFrom(type))
+                    // {
+                    //     UnityEngine.Debug.LogWarning(string.Format("{0} not gen (from reflection wraper), using reflection instead", type));
+                    // }
                 }
 #else
                 Utils.ReflectionWrap(L, type, privateAccessibleFlags.Contains(type));
