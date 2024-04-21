@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.chua.main-thread-executor": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypePackages/MainThreadExecutor#dev",
-    "com.chua.prototype-utils": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypePackages/PrototypeUtils#dev",
+    "com.chua.misc-utils": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypePackages/MiscUtils#dev",
     "com.chua.time-utils": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypePackages/TimeUtils#dev",
     "com.code-philosophy.hybridclr": "https://github.com/focus-creative-games/hybridclr_unity.git",
     "com.cysharp.messagepipe": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe",

@@ -4,9 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using MyUtils;
+using PrototypePackages.MiscUtils;
 using UnityEditor;
 using UnityEngine;
-using static PrototypePackages.PrototypeUtils.UIUtils;
+using static PrototypePackages.MiscUtils.UIUtils;
 namespace UI.ShowAndExecuteFunctionLab
 {
 

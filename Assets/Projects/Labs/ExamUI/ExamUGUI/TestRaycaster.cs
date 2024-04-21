@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PrototypePackages.PrototypeUtils;
+using PrototypePackages.MiscUtils;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Labs.ExamUI.ExamUGUI;
-using PrototypePackages.PrototypeUtils;
+using PrototypePackages.MiscUtils;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;

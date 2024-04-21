@@ -5,16 +5,16 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e19e8629dc0e65eefcc4d9ea3209437059ce14a8"
+      "hash": "d2cf8981fad4183cb774673680a4b5646401344d"
     },
-    "com.chua.prototype-utils": {
-      "version": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypePackages/PrototypeUtils#dev",
+    "com.chua.misc-utils": {
+      "version": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypePackages/MiscUtils#dev",
       "depth": 0,
       "source": "git",
       "dependencies": {
-        "com.unity.mathematics": "1.2.5"
+        "com.unity.mathematics": "1.2.6"
       },
-      "hash": "de7c6b8e857db6c31099e020974096f32839235b"
+      "hash": "5436e9442487aec878403bfa13f90ddb93c3a66e"
     },
     "com.chua.time-utils": {
       "version": "https://github.com/iamabigartist/UnityPrototypeUtils.git?path=/Assets/PrototypePackages/TimeUtils#dev",

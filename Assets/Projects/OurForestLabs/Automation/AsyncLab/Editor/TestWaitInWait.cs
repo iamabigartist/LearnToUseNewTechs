@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using PrototypePackages.PrototypeUtils;
+using PrototypePackages.MiscUtils;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;

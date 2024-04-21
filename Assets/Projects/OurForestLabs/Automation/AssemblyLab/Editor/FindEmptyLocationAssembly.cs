@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using MyUtils;
+using PrototypePackages.MiscUtils;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using PrototypePackages.PrototypeUtils;
 namespace Automation.AssemblyLab.Editor
 {
     public class FindEmptyLocationAssembly : EditorWindow

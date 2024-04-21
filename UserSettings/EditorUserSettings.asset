@@ -35,6 +35,9 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-9:
       value: 5208005152515e09585f5f7114220f444f151d7e7b7e2532792a1c36e6e6633c
       flags: 0
+    UIBuilder.EditorExtensionModeKey:
+      value: 37434103
+      flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
