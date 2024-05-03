@@ -13,14 +13,14 @@ public struct VEScope<T> : IDisposable
 public class UXMLBuilder
 {
 	Stack<VisualElement> parent_stack = new();
-	VisualElement cur_parent;
+	public VisualElement cur_parent;
 
 	public UXMLBuilder(VisualElement root_ve)
 	{
 		PushScope(root_ve);
 	}
 	
-	public void Add<T>(T ve_new, out T ve_var) where T : VisualElement
+	public void Add<T>(out T ve_var, T ve_new) where T : VisualElement
 	{
 		ve_var = ve_new;
 		cur_parent.Add(ve_new);
