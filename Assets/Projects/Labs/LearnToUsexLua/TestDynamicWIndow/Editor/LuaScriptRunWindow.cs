@@ -9,6 +9,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 using XLua;
+
 public class LuaScriptRunWindow : EditorWindow
 {
 	[MenuItem("Labs/LuaScriptRunWindow")]
@@ -98,7 +99,7 @@ public class LuaScriptRunWindow : EditorWindow
 				title = "value",
 				minWidth = 400,
 				stretchable = true,
-				sortable = true,
+				sortable = false,
 				makeCell = () =>
 				{
 					return GenTreeLabel();
