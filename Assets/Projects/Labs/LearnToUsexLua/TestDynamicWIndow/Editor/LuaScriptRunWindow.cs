@@ -60,7 +60,6 @@ public class LuaScriptRunWindow : EditorWindow
 			{
 				title = "key",
 				minWidth = 100,
-				maxWidth = 200,
 				stretchable = true,
 				sortable = true,
 				makeCell = () =>

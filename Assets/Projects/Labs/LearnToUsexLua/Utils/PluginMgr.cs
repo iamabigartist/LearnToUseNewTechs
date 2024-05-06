@@ -3,6 +3,10 @@ namespace Labs.LearnToUseXLua.Utils
 {
 public class PluginMgr
 {
+	
+	
+	
+	
 	void Execute<TCallbackDoc>(
 		TCallbackDoc[] callback_list, 
 		Action<TCallbackDoc> ExecuteMethod)
