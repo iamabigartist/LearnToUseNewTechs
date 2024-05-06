@@ -23,7 +23,6 @@ public class TypeTagMgr
 	public void Init()
 	{
 		AppDomain.CurrentDomain.AssemblyLoad += OnAssemblyLoad;
-
 	}
 
 	void OnAssemblyLoad(object sender, AssemblyLoadEventArgs args)
