@@ -1,17 +1,17 @@
 ﻿-- Example
 --[[
 
-GNS.Project.Labs.NamespaceModuleExample()
-
-local random = Project.Utils.Math.Random
-local cjson = Project.cjson
+Namespace().Project.Labs.NamespaceModuleExample()
+Using().Project.Utils.Math.Random()
+Using().Project.cjson()
 
 cjson.encode({a=1, b=2, c=3})
 print(random(1, 100))
 
 --]]
 
-ns_tbl_mt = {
+-- Namespace declaration expression metatable, can create new namespace and call to claim current file
+local namespace_mt = {
     __index = function(cur_ns, key)
         if type(key) == "string" then
             if not cur_ns[key] then rawset(cur_ns, key, BuildNamespaceTable(cur_ns, key)) end
@@ -31,10 +31,22 @@ ns_tbl_mt = {
     end
 }
 
+-- Using expression, can create new namespace and call to return a ref of the ns, be set into the fenv of current file
+local using_mt = {
+    
+}
+
+-- Used outside namespace mode, to require a module and return the module table
+local require_mt = {}
+
 function InitNamespaceModule()
-    GNS = {}
-    setmetatable(GNS, ns_tbl_mt)
-    NS_Dict = {}
+    NamespaceModule = {
+        NamespaceRoot = {},
+        UsingRoot = {},
+        RequireRoot = {},
+        NS_Dict = {},
+    }
+    setmetatable(NamespaceModule.NamespaceRoot, namespace_mt)
 end
 
 function BuildNamespaceTable(parent_ns, ns_name)
