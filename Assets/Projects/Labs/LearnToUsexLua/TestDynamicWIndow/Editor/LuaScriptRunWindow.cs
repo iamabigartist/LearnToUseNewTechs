@@ -9,7 +9,6 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 using XLua;
-
 public class LuaScriptRunWindow : EditorWindow
 {
 	[MenuItem("Labs/LuaScriptRunWindow")]
@@ -121,12 +120,15 @@ public class LuaScriptRunWindow : EditorWindow
 		lua_env = new();
 		lua_env.DoString(File.ReadAllText("Assets/Projects/Labs/LearnToUseXLua/LuaTableTreeView/LuaDataView.lua"));
 		get_data_view = lua_env.Global.Get<GetDataViewDelegate>("GetViewData");
+		Undo.undoRedoEvent += Test_OnUndoRedoEvent;
 	}
+	void Test_OnUndoRedoEvent(in UndoRedoInfo undo) => Debug.Log($"name:{undo.undoName}, is_redo:{undo.isRedo}, group:{undo.undoGroup}");
 
 	void OnDisable()
 	{
 		get_data_view = null;
 		lua_env.Dispose();
+		Undo.undoRedoEvent -= Test_OnUndoRedoEvent;
 	}
 
 	void RunCurScript()
