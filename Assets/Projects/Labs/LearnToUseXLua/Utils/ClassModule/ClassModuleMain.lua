@@ -1,22 +1,19 @@
-﻿local 
-
-local ClassModuleFuncList = {}
-
-local function CLassMode_index(t, k)
-    local f = ClassModuleFuncList[k]
-    if f then return f end
-    return { is_declaration = true, name = k }
+﻿local function NewInstance(class_tbl, ...)
+    local instance = {}
+    setmetatable(instance, { __index = class_tbl })
+    if instance.Ctor then instance:Ctor(...) end
+    return instance
 end
 
-local function CLassMode_newindex(t, k, v)
-    rawset(t, k, v)
+local class_mt = {}
+function class_mt.__call(t, ...)
+    return NewInstance(t, ...)
 end
 
-ClassMode_ENV_MT = {
-    __index = function(t, k)
-        return CLassMode_index(t, k)
-    end,
-    __newindex = function(t, k, v)
-        CLassMode_newindex(t, k, v)
-    end
+local function SetClassMt(tbl)
+    setmetatable(tbl, class_mt)
+end
+
+return {
+    SetClassTbl = SetClassTbl
 }
