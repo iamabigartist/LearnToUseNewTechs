@@ -4,6 +4,20 @@ using UnityEngine;
 
 public interface IStringSerializable<TData>
 {
-	public void Serialize(in TData data, ref byte[] buffer);
-	public void Deserialize(in byte[] buffer, ref TData data);
+	public string SerializedData { get; set; }
+	public void Serialize(in TData data, ref string buffer);
+	public void Deserialize(in string buffer, ref TData data);
+}
+
+public abstract class StringSerializedData:ISerializationCallbackReceiver
+{
+	Dictionary<string, object> record;
+	public void OnBeforeSerialize()
+	{
+		
+	}
+	public void OnAfterDeserialize()
+	{
+		
+	}
 }
