@@ -9,7 +9,7 @@ namespace UI.ShowAndExecuteFunctionLab
     public class Fur
     {
         public Color color;
-        public PhysicMaterial material;
+        public PhysicsMaterial material;
         public int heal;
     }
 
